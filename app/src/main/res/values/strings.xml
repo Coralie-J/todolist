@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Todo List</string>
+    <string name="tab_text_1">Liste</string>
+    <string name="tab_text_2">Ajouter tâche</string>
+    <string name="tab_text_3">Calendrier</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Nom de la tâche </string>
+    <string name="task_description">Détails</string>
+    <string name="date">Date</string>
+    <string name="select_date">Select date</string>
+</resources>
