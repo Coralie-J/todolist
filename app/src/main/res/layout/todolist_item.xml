@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Nom Tâche"
+            android:textSize="@dimen/gros_titre"
             android:textStyle="bold"
             />
 
@@ -25,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Blabla"
+            android:textSize="@dimen/taille_texte_form"
             />
 
         <TextView
@@ -32,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20/12/2021"
+            android:textSize="@dimen/taille_texte_form"
             />
     </LinearLayout>
 
@@ -41,6 +44,7 @@
         android:layout_height="wrap_content"
         android:text="Suppr."
         android:layout_gravity="center"
+        android:textSize="@dimen/taille_texte_form"
         />
 
 </LinearLayout>

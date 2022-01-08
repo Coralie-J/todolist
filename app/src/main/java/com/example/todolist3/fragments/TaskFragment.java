@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.example.todolist3.MainActivity;
 import com.example.todolist3.R;
 
 import java.util.ArrayList;
@@ -21,10 +22,10 @@ import java.util.HashMap;
  * A simple {@link Fragment} subclass.
  */
 
-public class Task extends Fragment {
+public class TaskFragment extends Fragment {
 
 
-    public Task() {
+    public TaskFragment() {
         // Required empty public constructor
         super();
     }
@@ -33,6 +34,7 @@ public class Task extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_task, container, false);
+
         Button bouton_date = layout.findViewById(R.id.btn_select_date);
         Button bouton_add = layout.findViewById(R.id.btn_add_task);
         EditText edit_date = layout.findViewById(R.id.edit_date);
@@ -42,7 +44,14 @@ public class Task extends Fragment {
         bouton_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                if (getActivity().getClass() == MainActivity.class){
+                    MainActivity parent = (MainActivity) getActivity();
+                    parent.addToArrayList(
+                            edit_nom_task.getText().toString(),
+                            edit_details.getText().toString(),
+                            edit_date.getText().toString()
+                    );
+                }
             }
         });
 

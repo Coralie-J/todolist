@@ -11,14 +11,14 @@
 
     </item>
 
-    <item android:height="16dp" android:width="16dp" android:gravity="center">
+    <item android:height="12dp" android:width="12dp" android:gravity="center">
         <shape android:shape="line">
             <stroke android:width="2dp"
                 android:color="@android:color/white" />
         </shape>
     </item>
 
-    <item android:width="16dp" android:gravity="center">
+    <item android:height="12dp" android:width="12dp" android:gravity="center">
         <rotate
             android:fromDegrees="90"
             android:pivotX="50%"

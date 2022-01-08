@@ -1,26 +1,23 @@
 package com.example.todolist3;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.util.Log;
 
+import com.example.todolist3.list.TodoListAdapter;
 import com.example.todolist3.ui.main.SectionsPagerAdapter;
 import com.example.todolist3.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private ArrayList<HashMap> tasks;
+    private ArrayList<Task> tasks;
+    private TodoListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +31,25 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = binding.fab;
+        binding.fab.hide();
 
         this.tasks = new ArrayList<>();
+        this.adapter = new TodoListAdapter(tasks);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("todolist", (ArrayList<? extends Parcelable>) tasks);
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void addToArrayList(String nom_tache, String details, String date){
+        Task new_task = new Task(nom_tache, details, date);
+        this.tasks.add(new_task);
+        this.adapter.notifyDataSetChanged();
+    }
+
+    public TodoListAdapter getAdapter() {
+        return adapter;
+    }
+
+    public ArrayList<Task> getTasks() {
+        return tasks;
     }
 }

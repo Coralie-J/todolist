@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.todolist3.R;
 import com.example.todolist3.fragments.CalendrierFragment;
 import com.example.todolist3.fragments.ListTaskFragment;
-import com.example.todolist3.fragments.Task;
+import com.example.todolist3.fragments.TaskFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -36,7 +36,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 fragment = new ListTaskFragment();
                 break;
             case 1:
-                fragment = new Task();
+                fragment = new TaskFragment();
                 break;
             case 2:
                 fragment = new CalendrierFragment();
