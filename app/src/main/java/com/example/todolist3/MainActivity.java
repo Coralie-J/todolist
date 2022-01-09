@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void addToArrayList(String nom_tache, String details, String date){
-        Task new_task = new Task(nom_tache, details, date);
+    public void addToArrayList(String nom_tache, String details, String date, String heure_debut, String heure_fin){
+        Task new_task = new Task(nom_tache, details, date, heure_debut, heure_fin);
         this.tasks.add(new_task);
         this.adapter.notifyDataSetChanged();
     }

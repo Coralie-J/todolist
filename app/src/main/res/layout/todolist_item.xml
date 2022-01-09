@@ -22,20 +22,28 @@
             />
 
         <TextView
-            android:id="@+id/tv_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Blabla"
-            android:textSize="@dimen/taille_texte_form"
-            />
-
-        <TextView
             android:id="@+id/tv_date_task"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20/12/2021"
             android:textSize="@dimen/taille_texte_form"
             />
+
+        <TextView
+            android:id="@+id/tv_heure_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="De 10:00 à 15:00"
+            android:textSize="@dimen/taille_texte_form"
+            />
+
+        <TextView
+            android:id="@+id/tv_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/taille_texte_form"
+            />
+
     </LinearLayout>
 
     <Button

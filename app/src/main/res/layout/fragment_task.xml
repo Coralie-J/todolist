@@ -41,13 +41,14 @@
             android:lines="2"
             />
 
-    <TextView
-        android:textSize="@dimen/taille_texte_form"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/date"
-        android:paddingTop="10dp"
-        />
+        <TextView
+            android:textSize="@dimen/taille_texte_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_debut"
+            android:paddingTop="10dp"
+            />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,6 +73,55 @@
                 android:background="@drawable/calendar_icon"
                 />
 
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:textSize="@dimen/taille_texte_form"
+            android:layout_width="0dp"
+            android:layout_weight="0.35"
+            android:layout_height="wrap_content"
+            android:text="@string/heure_debut"
+            />
+
+        <TextView
+            android:textSize="@dimen/taille_texte_form"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="@string/heure_fin"
+            />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:id="@+id/edit_heure_debut"
+                android:inputType="time"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/appbar_padding"
+                />
+
+            <EditText
+                android:id="@+id/edit_heure_fin"
+                android:inputType="time"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+
+                />
         </LinearLayout>
 
     </LinearLayout>
