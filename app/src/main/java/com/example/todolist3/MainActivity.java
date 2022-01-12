@@ -1,6 +1,8 @@
 package com.example.todolist3;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -10,7 +12,10 @@ import android.util.Log;
 import com.example.todolist3.list.TodoListAdapter;
 import com.example.todolist3.ui.main.SectionsPagerAdapter;
 import com.example.todolist3.databinding.ActivityMainBinding;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         binding.fab.hide();
 
-        this.tasks = new ArrayList<>();
+        restoreTasks();
         this.adapter = new TodoListAdapter(tasks);
 
     }
@@ -51,5 +56,28 @@ public class MainActivity extends AppCompatActivity {
 
     public ArrayList<Task> getTasks() {
         return tasks;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("TEST", "Application stoppée");
+        SharedPreferences sharedPreferences = getSharedPreferences("todolist", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String tasks_string = gson.toJson(tasks);
+        editor.putString("tasks", tasks_string);
+        editor.apply();
+    }
+
+    public void restoreTasks(){
+        SharedPreferences sharedPreferences = getSharedPreferences("todolist", MODE_PRIVATE);
+        String tasks_json = sharedPreferences.getString("tasks", null);
+        Gson gson = new Gson();
+        Type type = new TypeToken<ArrayList<Task>>(){}.getType();
+        this.tasks = gson.fromJson(tasks_json, type);
+
+        if (this.tasks == null)
+            this.tasks = new ArrayList<>();
     }
 }

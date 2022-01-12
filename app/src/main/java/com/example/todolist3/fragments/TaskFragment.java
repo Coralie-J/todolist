@@ -1,6 +1,7 @@
 package com.example.todolist3.fragments;
 
 import android.app.DatePickerDialog;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -27,7 +28,6 @@ public class TaskFragment extends Fragment {
 
 
     public TaskFragment() {
-        // Required empty public constructor
         super();
     }
 
@@ -91,7 +91,7 @@ public class TaskFragment extends Fragment {
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
                         v.getContext(),
-                        android.R.style.Theme_Holo_Light_Dialog_NoActionBar,
+                        android.R.style.Theme_Material_Dialog_NoActionBar,
                         dateSetListener, 2022, 1, 30
                 );
 
