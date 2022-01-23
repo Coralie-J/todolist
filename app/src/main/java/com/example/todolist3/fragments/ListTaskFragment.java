@@ -64,8 +64,8 @@ public class ListTaskFragment extends Fragment {
                             }
                         }
 
-                        mainActivity.getAdapter().notifyDataSetChanged();
-                        // mainActivity.getAdapter().notifyItemRemoved(i);
+                        // mainActivity.getAdapter().notifyDataSetChanged();
+                        mainActivity.getAdapter().notifyItemRemoved(i);
                     }
                 }
 

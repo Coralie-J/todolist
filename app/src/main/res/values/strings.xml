@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Todo List</string>
     <string name="tab_text_1">Liste</string>
-    <string name="tab_text_2">Ajouter tâche</string>
+    <string name="tab_text_2">Ajouter</string>
     <string name="tab_text_3">Calendrier</string>
     <string name="hello_blank_fragment">Nom de la tâche </string>
     <string name="task_description">Détails</string>

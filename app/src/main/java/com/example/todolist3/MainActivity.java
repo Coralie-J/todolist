@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.applandeo.materialcalendarview.EventDay;
 import com.example.todolist3.list.TodoListAdapter;
 import com.example.todolist3.ui.main.SectionsPagerAdapter;
 import com.example.todolist3.databinding.ActivityMainBinding;
@@ -16,7 +17,13 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    public void addToArrayList(String nom_tache, String details, String date, String heure_debut){
-        Task new_task = new Task(nom_tache, details, date, heure_debut);
+    public void addToArrayList(String nom_tache, String date, String heure_debut){
+        Task new_task = new Task(nom_tache, date, heure_debut);
         this.tasks.add(new_task);
-        this.adapter.notifyDataSetChanged();
+        this.adapter.notifyItemInserted(tasks.size() - 1);
     }
 
     public TodoListAdapter getAdapter() {
@@ -61,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i("TEST", "Application stoppée");
         SharedPreferences sharedPreferences = getSharedPreferences("todolist", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();

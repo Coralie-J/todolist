@@ -55,12 +55,7 @@ public class TaskFragment extends Fragment {
                     String heure_debut = edit_heure_debut.getText().toString().trim();
 
                     if (! (nom_tache.isEmpty() || date.isEmpty() )){
-                        parent.addToArrayList(
-                                nom_tache,
-                                edit_details.getText().toString(),
-                                date,
-                                heure_debut
-                        );
+                        parent.addToArrayList(nom_tache, date, heure_debut);
                     } else
                         Toast.makeText(getContext(), "Il manque des informations", Toast.LENGTH_SHORT).show();
                 }

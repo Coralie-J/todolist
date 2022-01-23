@@ -5,19 +5,13 @@ import java.util.Date;
 public class Task {
 
     private String nom;
-    private String description;
     private String date;
     private String heure_debut;
 
-    public Task(String nom, String description, String date, String heure_debut){
+    public Task(String nom, String date, String heure_debut){
         this.nom = nom;
-        this.description = description;
         this.date = date;
         this.heure_debut = heure_debut;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public String getNom() {
@@ -36,7 +30,6 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "nom='" + nom + '\'' +
-                ", description='" + description + '\'' +
                 ", date='" + date + '\'' +
                 ", heure_debut='" + heure_debut + '\'' +
                 '}';
