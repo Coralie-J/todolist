@@ -2,59 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="10dp"
-    android:paddingRight="7dp"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:background="@drawable/rounded_rectangle"
     android:orientation="horizontal">
 
-
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.7"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_nom_task"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Nom Tâche"
-            android:textSize="@dimen/gros_titre"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:id="@+id/tv_date_task"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20/12/2021"
-            android:textSize="@dimen/taille_texte_form"
-            />
-
-        <TextView
-            android:id="@+id/tv_heure_task"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="De 10:00 à 15:00"
-            android:textSize="@dimen/taille_texte_form"
-            />
-
-        <TextView
-            android:id="@+id/tv_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/taille_texte_form"
-            />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_suppr_task"
+    <CheckBox
+        android:id="@+id/check_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Suppr."
         android:layout_gravity="center"
+        android:checked="false"
+        />
+
+    <TextView
+        android:id="@+id/tv_nom_task"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="0.7"
+        android:text="Nom Tâche"
+        android:textSize="@dimen/taille_texte_form"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tv_date_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20/12/2021"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp"
         android:textSize="@dimen/taille_texte_form"
         />
+
+    <TextView
+        android:id="@+id/tv_heure_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textSize="@dimen/taille_texte_form" />
 
 </LinearLayout>

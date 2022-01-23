@@ -8,14 +8,12 @@ public class Task {
     private String description;
     private String date;
     private String heure_debut;
-    private String heure_fin;
 
-    public Task(String nom, String description, String date, String heure_debut, String heure_fin){
+    public Task(String nom, String description, String date, String heure_debut){
         this.nom = nom;
         this.description = description;
         this.date = date;
         this.heure_debut = heure_debut;
-        this.heure_fin = heure_fin;
     }
 
     public String getDescription() {
@@ -34,7 +32,13 @@ public class Task {
         return heure_debut;
     }
 
-    public String getHeureFin() {
-        return heure_fin;
+    @Override
+    public String toString() {
+        return "Task{" +
+                "nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                ", date='" + date + '\'' +
+                ", heure_debut='" + heure_debut + '\'' +
+                '}';
     }
 }

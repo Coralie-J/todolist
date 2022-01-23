@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.todolist3.R;
@@ -20,17 +21,17 @@ public class TodoListAdapter extends RecyclerView.Adapter {
 
         private TextView date;
         private TextView nom_tache;
-        private TextView details;
+        // private TextView details;
         private TextView heures;
-        private Button bouton_supprimer;
+        private CheckBox checkBox_fait;
 
         public ItemView(View itemView){
             super(itemView);
             this.date = itemView.findViewById(R.id.tv_date_task);
-            this.details = itemView.findViewById(R.id.tv_details);
+            // this.details = itemView.findViewById(R.id.tv_details);
             this.nom_tache = itemView.findViewById(R.id.tv_nom_task);
             this.heures = itemView.findViewById(R.id.tv_heure_task);
-            this.bouton_supprimer = itemView.findViewById(R.id.btn_suppr_task);
+            this.checkBox_fait = itemView.findViewById(R.id.check_item);
         }
     }
 
@@ -53,21 +54,18 @@ public class TodoListAdapter extends RecyclerView.Adapter {
 
         ((ItemView) viewHolder).nom_tache.setText(current_task.getNom());
         ((ItemView) viewHolder).date.setText(current_task.getDate());
-        ((ItemView) viewHolder).heures.setText(String.format("De %s à %s", current_task.getHeureDebut(), current_task.getHeureFin()));
-        ((ItemView) viewHolder).details.setText(current_task.getDescription());
 
-        ((ItemView) viewHolder).bouton_supprimer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TodoListAdapter.this.tasks.remove(current_task);
-                TodoListAdapter.this.notifyDataSetChanged();
-            }
-        });
+        if (current_task.getHeureDebut() != null)
+            ((ItemView) viewHolder).heures.setText(String.format("%s", current_task.getHeureDebut()));
+        // ((ItemView) viewHolder).details.setText(current_task.getDescription());
+
     }
 
     @Override
     public int getItemCount() {
         return tasks.size();
     }
+
+
 
 }

@@ -6,7 +6,9 @@
     <color name="purple_700">#050404</color> <!-- barre du haut -->
     <color name="teal_200">#92DCE5</color> <!-- trait du menu && edit text -->
 
-    <!-- <color name="teal_200">#9AD1D4</color> -->
+    <!-- Couleur bouton supprimer -->
+    <color name="abricot">#F8BD7F</color>
+    <color name="orange_doux">#F2AF29</color>
 
     <color name="teal_700">#FF018786</color>
 

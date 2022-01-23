@@ -20,4 +20,13 @@
 
     </ScrollView>
 
+    <Button
+        android:id="@+id/btn_supprimer"
+        android:layout_width="@dimen/taille_bouton_supprimer"
+        android:layout_height="@dimen/taille_bouton_supprimer"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/bouton_supprimer"
+        />
+
 </FrameLayout>

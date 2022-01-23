@@ -54,8 +54,6 @@ public class CalendrierFragment extends Fragment {
             }
         }
 
-        // calendarView.setHighlightedDays(calendars);
-
         calendarView.setEvents(eventDays);
 
         return layout;

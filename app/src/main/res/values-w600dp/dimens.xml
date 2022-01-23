@@ -1,3 +1,9 @@
 <resources>
     <dimen name="fab_margin">48dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="taille_texte_form">14sp</dimen>
+    <dimen name="gros_titre">18sp</dimen>
+    <dimen name="taille_bouton_supprimer">50dp</dimen>
 </resources>

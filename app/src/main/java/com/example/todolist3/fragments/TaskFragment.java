@@ -43,7 +43,6 @@ public class TaskFragment extends Fragment {
         EditText edit_nom_task = layout.findViewById(R.id.edit_nom_task);
         EditText edit_details = layout.findViewById(R.id.edit_details);
         EditText edit_heure_debut = layout.findViewById(R.id.edit_heure_debut);
-        EditText edit_heure_fin = layout.findViewById(R.id.edit_heure_fin);
 
         bouton_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,15 +53,13 @@ public class TaskFragment extends Fragment {
                     String nom_tache = edit_nom_task.getText().toString().trim();
                     String date = edit_date.getText().toString().trim();
                     String heure_debut = edit_heure_debut.getText().toString().trim();
-                    String heure_fin = edit_heure_fin.getText().toString().trim();
 
-                    if (! (nom_tache.isEmpty() || date.isEmpty() || heure_debut.isEmpty() || heure_fin.isEmpty())){
+                    if (! (nom_tache.isEmpty() || date.isEmpty() )){
                         parent.addToArrayList(
                                 nom_tache,
                                 edit_details.getText().toString(),
                                 date,
-                                heure_debut,
-                                heure_fin
+                                heure_debut
                         );
                     } else
                         Toast.makeText(getContext(), "Il manque des informations", Toast.LENGTH_SHORT).show();

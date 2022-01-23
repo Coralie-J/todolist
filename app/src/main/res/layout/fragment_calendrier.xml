@@ -3,12 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.CalendrierFragment">
 
    <com.applandeo.materialcalendarview.CalendarView
        android:id="@+id/calendar"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       app:headerColor="#1D4E89"
+       app:todayLabelColor="#1D4E89"
+       app:selectionColor="@color/teal_200"
       />
 
 

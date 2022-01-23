@@ -80,54 +80,20 @@
 
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        >
-
         <TextView
             android:textSize="@dimen/taille_texte_form"
-            android:layout_width="0dp"
-            android:layout_weight="0.35"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/heure_debut"
             />
 
-        <TextView
-            android:textSize="@dimen/taille_texte_form"
-            android:layout_width="0dp"
-            android:layout_weight="0.3"
-            android:layout_height="wrap_content"
-            android:text="@string/heure_fin"
-            />
-    </LinearLayout>
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/edit_heure_debut"
+            android:inputType="time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <EditText
-                android:id="@+id/edit_heure_debut"
-                android:inputType="time"
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/appbar_padding"
-                />
-
-            <EditText
-                android:id="@+id/edit_heure_fin"
-                android:inputType="time"
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:layout_height="wrap_content"
-
-                />
-        </LinearLayout>
+            android:layout_marginRight="@dimen/appbar_padding"
+            />
 
     </LinearLayout>
 
@@ -135,8 +101,8 @@
 
     <Button
         android:id="@+id/btn_add_task"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
         android:background="@drawable/button_add"
         android:layout_gravity="bottom|right"
         android:layout_margin="10dp"
